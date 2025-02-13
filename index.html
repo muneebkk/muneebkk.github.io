@@ -5,14 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Muneeb's Portfolio</title>
     <link rel="stylesheet" href="assets/css/style.css">
-
 </head>
 <body>
     <header class="l-header">
         <nav class="nav bd-grid">
-            <div>
-                <a href="#" class="nav__logo">Muneeb</a>
-            </div>
+            <a href="#" class="nav__logo">Muneeb</a>
             <div class="nav__menu" id="nav-menu">
                 <ul class="nav__list">
                     <li class="nav__item"><a href="#home" class="nav__link active">Home</a></li>
@@ -22,21 +19,21 @@
                     <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
                 </ul>
             </div>
-            <div class="nav__toggle" id="nav-toggle">
-                ☰
-            </div>
         </nav>
-    </header>   
+    </header>
     
     <section class="home" id="home">
         <div class="home__container bd-grid">
             <div class="home__data">
-                <h1 class="home__title">Hello, I'm <span class="home__title-color">Muneeb</span></h1>
-                <p class="home__title">A Passionate Developer</p>                
-                <a href="#contact" class="button">Contact Me</a>
+                <div class="typing-box">
+                    <h1 class="home__title">
+                        <span id="typing-text"></span>
+                    </h1>
+                </div>
+                <a href="#contact" class="button" id="contact-btn">Contact Me</a>
     
                 <!-- Social Media Icons -->
-                <div class="home__social">
+                <div class="home__social" id="social-icons">
                     <a href="https://www.linkedin.com/in/muneeb-kamran-0a345722a/" target="_blank" class="home__social-icon">
                         <img src="images/linkedin.png" alt="LinkedIn">
                     </a>
@@ -54,7 +51,42 @@
             </div>
         </div>
     </section>
+
+    <script>
+        const typingText = document.getElementById('typing-text');
+        const phrases = ["Hello, I'm Muneeb", "A Passionate Developer"];
+        let phraseIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+
+        function typeWriter() {
+            const currentPhrase = phrases[phraseIndex];
+
+            if (isDeleting) {
+                typingText.textContent = currentPhrase.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                typingText.textContent = currentPhrase.substring(0, charIndex + 1);
+                charIndex++;
+            }
+
+            if (!isDeleting && charIndex === currentPhrase.length) {
+                setTimeout(() => isDeleting = true, 1500);
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                phraseIndex = (phraseIndex + 1) % phrases.length;
+                setTimeout(typeWriter, 500);
+                return;
+            }
+
+            const typingSpeed = isDeleting ? 50 : 100;
+            setTimeout(typeWriter, typingSpeed);
+        }
+
+        window.onload = typeWriter;
+    </script>
     
-      
+    
+
 </body>
 </html>

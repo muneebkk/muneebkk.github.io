@@ -17,16 +17,17 @@ body {
 }
 
 .nav {
-    height: 3rem;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; 
     align-items: center;
-    font-weight: 600;
-    padding: 0 20px;
+    height: 3.5rem;
+    padding: 0 40px; 
 }
 
 .nav__menu {
     display: flex;
+    justify-content: flex-end; /* Aligns menu to the right */
+    flex-grow: 1; /* Takes up remaining space */
 }
 
 .nav__list {
@@ -42,9 +43,20 @@ body {
     transition: 0.3s;
 }
 
+.nav__logo:hover,
 .nav__link:hover {
-    color: #380694;
+    color: #380694; /* Custom color */
 }
+
+.nav__logo {
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #222;
+    display: flex;
+    align-items: center;
+}
+
 
 .nav__toggle {
     font-size: 1.5rem;
@@ -142,6 +154,103 @@ body {
     padding: 2px; /* Fixed Padding */
 }
 
+/* Update the existing .typing-box styles and add new hover animations */
 
+.typing-box {
+    background: rgba(56, 6, 148, 0.05);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(56, 6, 148, 0.1);
+    animation: backgroundShift 10s ease-in-out infinite;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
+.typing-box::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #380694, #6b46c1, #380694);
+    z-index: -1;
+    filter: blur(10px);
+    opacity: 0;
+    transition: opacity 0.3s;
+    animation: glowingBorder 3s ease-in-out infinite;
+}
 
+.typing-box:hover {
+    transform: translateY(-5px) rotate(1deg);
+    box-shadow: 0 15px 30px rgba(56, 6, 148, 0.2);
+}
+
+.typing-box:hover::before {
+    opacity: 1;
+}
+
+@keyframes glowingBorder {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+}
+
+@keyframes backgroundShift {
+    0%, 100% { background-color: rgba(56, 6, 148, 0.05); }
+    50% { background-color: rgba(107, 70, 193, 0.05); }
+}
+
+/* Add these new styles for the image animation */
+
+.home__img {
+    position: relative;
+    transition: transform 0.5s ease;
+    animation: float 6s ease-in-out infinite;
+}
+
+.home__img img {
+    width: 250px; /* Adjust size as needed */
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.home__img:hover {
+    animation-play-state: paused;
+}
+
+.home__img:hover img {
+    transform: scale(1.05) rotate(5deg);
+    box-shadow: 0 15px 30px rgba(56, 6, 148, 0.3);
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+/* Add a pseudo-element for an additional hover effect */
+.home__img::after {
+    content: '';
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    right: 5%;
+    bottom: 5%;
+    border-radius: 50%;
+    border: 2px dashed #380694;
+    opacity: 0;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.home__img:hover::after {
+    opacity: 1;
+    transform: scale(1.1) rotate(-5deg);
+}
