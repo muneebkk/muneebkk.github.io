@@ -163,8 +163,8 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener("scroll", revealSkillsTitle);
     revealSkillsTitle(); // Check on load in case it's already visible
   });
-  
-/* ===== SCROLL ANIMATION FOR CONTACT SECTION ===== */
+
+  /* ===== SCROLL ANIMATION FOR CONTACT SECTION ===== */
 document.addEventListener("DOMContentLoaded", function () {
     const contactSection = document.querySelector(".contact");
     if (contactSection) {
@@ -182,7 +182,6 @@ document.addEventListener("DOMContentLoaded", function () {
       handleScroll();
     }
   });
-  
 
 
 })

@@ -802,7 +802,8 @@ body {
     }
   }
 
-  /*GLOBAL RESET FOR BOX-SIZING */
+  
+/*GLOBAL RESET FOR BOX-SIZING */
 *,
 *::before,
 *::after {
@@ -981,3 +982,4 @@ body {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-15px); }
 }
+
