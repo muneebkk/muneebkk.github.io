@@ -107,9 +107,9 @@ document.addEventListener("DOMContentLoaded", () => {
     { name: "C++", icon: "images/C++.png" },
     { name: "HTML", icon: "images/html.png" },
     { name: "CSS", icon: "images/CSS.png" },
-    { name: "React", icon: "images/react.png" },
+    { name: "React", icon: "images/React.png" },
     { name: "SQLite", icon: "images/SQllite.jpg" },
-    { name: "Git", icon: "images/git.png" },
+    { name: "Git", icon: "images/Git.png" },
     { name: "GitHub", icon: "images/github.png" },
     { name: "Figma", icon: "images/figma.png" },
     { name: "VS Code", icon: "images/vscode.png" },
@@ -165,9 +165,8 @@ document.addEventListener("DOMContentLoaded", () => {
   });
   
 
-  
-    
-  })
+
+})
   
   
   
