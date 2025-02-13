@@ -112,7 +112,6 @@ body {
     justify-content: center;
 }
 
-
 .home__img img {
     width: 250px; /* Adjust size */
     height: 250px;
@@ -130,7 +129,7 @@ body {
 .home__social-icon img {
     width: 30px; /* Ensure all icons have the same width */
     height: 30px;
-    object-fit: contain; /* Prevent stretching */
+    object-fit: contain; 
     transition: 0.3s ease-in-out;
 }
 
