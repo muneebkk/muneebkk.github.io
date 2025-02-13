@@ -21,6 +21,7 @@
             </div>
         </nav>
     </header>
+
     
     <section class="home" id="home">
         <div class="home__container bd-grid">
@@ -30,7 +31,7 @@
                         <span id="typing-text"></span>
                     </h1>
                 </div>
-                <a href="#contact" class="button" id="contact-btn">Contact Me</a>
+                <a href="mailto:mmk28@sfu.ca" class="button">Contact Me</a>
     
                 <!-- Social Media Icons -->
                 <div class="home__social" id="social-icons">
@@ -54,7 +55,7 @@
 
     <script>
         const typingText = document.getElementById('typing-text');
-        const phrases = ["Hello, I'm Muneeb", "A Passionate Developer"];
+        const phrases = ["Hello, I'm Muneeb", "A Passionate Developer!"];
         let phraseIndex = 0;
         let charIndex = 0;
         let isDeleting = false;
@@ -86,7 +87,46 @@
         window.onload = typeWriter;
     </script>
     
-    
-
+    <!-- About Section -->
+<section class="about section" id="about">
+    <div class="about__container">
+      <div class="about__img">
+        <img src="images/prefil1.jpg" alt="About Image" />
+      </div>
+      <div class="about__data">
+        <h2 class="about__title">About Me</h2>
+        <div class="about__description">
+          <div class="about__tab">
+            <button class="about__tab-btn active" data-tab="intro">Intro</button>
+            <button class="about__tab-btn" data-tab="passion">Passion</button>
+            <button class="about__tab-btn" data-tab="hobbies">Hobbies</button>
+          </div>
+          <div class="about__content active" id="intro">
+            <p>
+              Hi, my name is Muneeb, and I'm a second-year Computer Science major at SFU.
+              I am a passionate developer with a strong interest in various fields,
+              particularly web development, artificial intelligence, and machine learning.
+            </p>
+          </div>
+          <div class="about__content" id="passion">
+            <p>
+              I thrive on creating innovative solutions that push the boundaries of
+              technology and enhance user experiences. My goal is to make a positive impact
+              through cutting-edge software development.
+            </p>
+          </div>
+          <div class="about__content" id="hobbies">
+            <p>
+              Beyond coding, I have a deep love for boxing and football, which keep me active and competitive.
+              And when I'm not refining my skills or staying active, you can probably find me
+              immersed in a game of Valorant—though I might be in denial about how much time I
+              actually spend playing it!
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
