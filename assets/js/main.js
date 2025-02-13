@@ -164,7 +164,24 @@ document.addEventListener("DOMContentLoaded", () => {
     revealSkillsTitle(); // Check on load in case it's already visible
   });
   
-
+/* ===== SCROLL ANIMATION FOR CONTACT SECTION ===== */
+document.addEventListener("DOMContentLoaded", function () {
+    const contactSection = document.querySelector(".contact");
+    if (contactSection) {
+      function handleScroll() {
+        const sectionPosition = contactSection.getBoundingClientRect().top;
+        const screenPosition = window.innerHeight / 1.2;
+  
+        if (sectionPosition < screenPosition) {
+          contactSection.classList.add("visible");
+          window.removeEventListener("scroll", handleScroll);
+        }
+      }
+      window.addEventListener("scroll", handleScroll);
+      // Trigger the animation if the section is already in view on load
+      handleScroll();
+    }
+  });
   
 
 
