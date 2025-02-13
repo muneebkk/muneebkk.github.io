@@ -154,7 +154,7 @@ body {
     padding: 2px; /* Fixed Padding */
 }
 
-/* Update the existing .typing-box styles and add new hover animations */
+/* =======typiing box styles=========*/
 
 .typing-box {
     background: rgba(56, 6, 148, 0.05);
@@ -255,9 +255,7 @@ body {
     transform: scale(1.1) rotate(-5deg);
 }
 
-/* ----------------------------
-   About Section Base Styles
------------------------------ */
+/* =======About Section Base Styles============*/
 .about {
     display: flex;
     justify-content: center;
@@ -302,9 +300,7 @@ body {
     transform: translateY(0);
   }
   
-  /* ----------------------------
-     Image Styling & Animation
-  ----------------------------- */
+  /*=====Image Styling & Animation======*/
   .about__img {
     flex: 1;
     display: flex;
@@ -331,9 +327,7 @@ body {
     transition: transform 0.3s ease;
   }
   
-  /* ----------------------------
-     Text Styling & Animation
-  ----------------------------- */
+  /* =========Text Styling & Animation===========*/
   .about__data {
     flex: 1;
     color: #ffffff;
@@ -437,3 +431,164 @@ body {
 .about__title:hover::after {
   width: 100%;
 }
+
+
+/* ==========Skills Section Base Styles===========*/
+.skills {
+    background-color: #ffffff;
+    padding: 80px 0;
+    overflow: hidden;
+  }
+  
+  .skills__container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .section__title {
+    font-size: 2.5rem;
+    color: #380694;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  .skills__carousel {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  .skills__track {
+    display: flex;
+    animation: slide 60s linear infinite;
+  }
+  
+  .skill__item {
+    flex: 0 0 auto;
+    width: 120px;
+    margin: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+  }
+  
+  .skill__item:hover {
+    transform: translateY(-5px);
+  }
+  
+  .skill__icon {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+  }
+  
+  .skill__item:hover .skill__icon {
+    transform: scale(1.1);
+  }
+  
+  .skill__name {
+    margin-top: 8px;
+    font-size: 14px;
+    text-align: center;
+    color: #333;
+  }
+  
+  @keyframes slide {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  
+/* Skills Image Section Styling */
+.skills-image-section {
+    padding: 1rem 0 4rem 0; /* Reduced top padding since it follows the skills carousel */
+    background-color: #ffffff; /* Match the white background */
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .skills-image-container {
+    max-width: 400px; /* Reduced from 800px for a more focused image */
+    width: 90%;
+    margin: 0 auto;
+    position: relative;
+  }
+  
+  .skills-image-container::before {
+    content: "";
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    right: -20px;
+    bottom: -20px;
+    background: linear-gradient(135deg, rgba(56, 6, 148, 0.05), rgba(56, 6, 148, 0));
+    border-radius: 16px;
+    z-index: -1;
+  }
+  
+  .skills-image {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(56, 6, 148, 0.1);
+    transition: all 0.4s ease;
+    display: block;
+  }
+  
+  .skills-image:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(56, 6, 148, 0.2);
+  }
+  
+  /* Responsive adjustments */
+  @media screen and (max-width: 768px) {
+    .skills-image-container {
+      width: 95%;
+    }
+  
+    .skills-image-section {
+      padding: 1rem 0 3rem 0;
+    }
+  }
+
+  /* Centered Skills Title with Underline Effect */
+.section__title {
+    position: relative;
+    display: inline-block;
+    font-size: 2.5rem;
+    color: #380694; /* Purple theme */
+    margin-bottom: 20px;
+    text-align: center;
+    width: 100%; /* Ensures proper centering */
+  }
+  
+  .section__title-container {
+    text-align: center; /* Center-align the container */
+  }
+  
+  /* Underline effect */
+  .section__title::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -5px; /* Adjust spacing between text and line */
+    width: 0;
+    height: 3px; /* Thickness of the underline */
+    background-color: #380694; /* Purple underline */
+    transition: width 0.5s ease-in-out;
+    transform: translateX(-50%); /* Ensures centering of underline */
+  }
+  
+  /* Expand underline on hover */
+  .section__title:hover::after {
+    width: 100%;
+  }
+  
+  

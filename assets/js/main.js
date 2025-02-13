@@ -99,6 +99,73 @@ document.addEventListener("DOMContentLoaded", () => {
       })
     })
   
+/* animation for skills bar */
+ // Skills section
+ const skills = [
+    { name: "Python", icon: "images/python.png" },
+    { name: "JavaScript", icon: "images/javascript.png" },
+    { name: "C++", icon: "images/C++.png" },
+    { name: "HTML", icon: "images/html.png" },
+    { name: "CSS", icon: "images/CSS.png" },
+    { name: "React", icon: "images/react.png" },
+    { name: "SQLite", icon: "images/SQllite.jpg" },
+    { name: "Git", icon: "images/git.png" },
+    { name: "GitHub", icon: "images/github.png" },
+    { name: "Figma", icon: "images/figma.png" },
+    { name: "VS Code", icon: "images/vscode.png" },
+    
+  ]
+
+  const skillsTrack = document.querySelector(".skills__track")
+
+  // Function to create a skill item
+  function createSkillItem(skill) {
+    const skillItem = document.createElement("div")
+    skillItem.classList.add("skill__item")
+
+    const skillIcon = document.createElement("img")
+    skillIcon.src = skill.icon
+    skillIcon.alt = skill.name
+    skillIcon.classList.add("skill__icon")
+
+    const skillName = document.createElement("span")
+    skillName.textContent = skill.name
+    skillName.classList.add("skill__name")
+
+    skillItem.appendChild(skillIcon)
+    skillItem.appendChild(skillName)
+    return skillItem
+  }
+
+  // Add skills to the track
+  skills.forEach((skill) => {
+    skillsTrack.appendChild(createSkillItem(skill))
+  })
+
+  // creating loop
+  skills.forEach((skill) => {
+    skillsTrack.appendChild(createSkillItem(skill))
+  })
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const skillsTitle = document.querySelector(".section__title");
+  
+    function revealSkillsTitle() {
+      const sectionPosition = skillsTitle.getBoundingClientRect().top;
+      const screenPosition = window.innerHeight / 1.3;
+  
+      if (sectionPosition < screenPosition) {
+        skillsTitle.classList.add("underline-active");
+        window.removeEventListener("scroll", revealSkillsTitle);
+      }
+    }
+  
+    window.addEventListener("scroll", revealSkillsTitle);
+    revealSkillsTitle(); // Check on load in case it's already visible
+  });
+  
+
+  
     
   })
   
