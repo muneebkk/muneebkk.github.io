@@ -43,7 +43,7 @@ body {
 }
 
 .nav__link:hover {
-    color: #007bff;
+    color: #380694;
 }
 
 .nav__toggle {
@@ -51,3 +51,97 @@ body {
     cursor: pointer;
     display: none; /* Will be shown in mobile view */
 }
+
+/* HOME SECTION */
+.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: left;
+    background-color: #f5f5f5;
+}
+
+.home__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+    max-width: 1000px;
+    margin-top: -200px;
+}
+
+.home__data {
+    flex: 1; 
+}
+
+
+.home__title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #000000;
+}
+
+.home__title-color {
+    color: #380694;
+}
+
+.home__subtitle {
+    font-size: 1.2rem;
+    color: #555;
+}
+
+.button {
+    display: inline-block;
+    background-color: #380694;
+    color: white;
+    padding: 10px 20px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.button:hover {
+    background-color: #380694;
+}
+
+.home__img {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.home__img img {
+    width: 250px; /* Adjust size */
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* ===== SOCIAL MEDIA ICONS ===== */
+.home__social {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.home__social-icon img {
+    width: 30px; /* Ensure all icons have the same width */
+    height: 30px;
+    object-fit: contain; 
+    transition: 0.3s ease-in-out;
+}
+
+.home__social-icon img:hover {
+    transform: scale(1.2);
+    opacity: 0.8;
+}
+
+.home__social-icon img {
+    padding: 2px; /* Fixed Padding */
+}
+
+
+
+
