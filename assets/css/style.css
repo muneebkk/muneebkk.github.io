@@ -461,7 +461,7 @@ body {
   
   .skills__track {
     display: flex;
-    animation: slide 60s linear infinite;
+    animation: slide 10s linear infinite;
   }
   
   .skill__item {
@@ -713,12 +713,12 @@ body {
     margin-bottom: 10px;
 }
 
-/* ===== SKILLS SECTION - REMOVE WHITE BOX ===== */
+/* ===== SKILLS SECTION====== */
 .experience__content .skills {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    gap: 10px; /* Spacing between icons */
+    gap: 10px; 
     margin-top: 10px;
     background: none !important;  /* Ensure no background */
     padding: 0;
@@ -762,7 +762,7 @@ body {
         color: #ffffff; /* Purple theme */
         margin-bottom: 20px;
         text-align: center;
-        width: 100%; /* Ensures proper centering */
+        width: 100%; 
       }
   
   .section-title::after {
